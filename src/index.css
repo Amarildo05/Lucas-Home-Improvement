@@ -9,3 +9,27 @@
 
   box-sizing: border-box;
 }
+
+/* Override PrimeReact theme variables to match the brand */
+:root {
+  --primary-color: #a6ce39; /* brand green */
+  --text-color: #2e2e2e; /* brand dark */
+  --surface-ground: #e8eae6; /* brand light */
+  --surface-card: #ffffff;
+}
+
+/* Navbar Mobile Menu Slide Effect */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
