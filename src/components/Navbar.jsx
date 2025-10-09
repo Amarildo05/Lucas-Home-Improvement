@@ -16,10 +16,14 @@ export default function Navbar() {
   return (
     <nav className="bg-brand-green text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-        {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
+          {/* <img
+            src="/Lucas-Home-Improvement.png"
+            alt="Lucas Home Improvement Logo"
+            className="h-20 w-20 object-contain"
+          /> */}
           <h1 className="text-2xl font-bold tracking-wide">
-            Lucas Home Improvement
+            Luca's Home Improvement
           </h1>
         </Link>
 
