@@ -3,7 +3,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#2E2E2E] text-white text-center p-6">
-      © {currentYear} Lucas Home Improvement
+      © {currentYear} Luca's Home Improvement
     </footer>
   );
 }
