@@ -61,7 +61,7 @@ export default function Projects() {
 
       <div className="flex justify-center">
         <Button
-          label="View More Projects"
+          label="Discover Our Work"
           icon="pi pi-arrow-right"
           iconPos="right"
           onClick={() => navigate("/projects")}
