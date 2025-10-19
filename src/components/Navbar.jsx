@@ -17,14 +17,11 @@ export default function Navbar() {
     <nav className="bg-brand-green text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
-          {/* <img
-            src="/Lucas-Home-Improvement.png"
+          <img
+            src="/Logo.png"
             alt="Lucas Home Improvement Logo"
-            className="h-20 w-20 object-contain"
-          /> */}
-          <h1 className="text-2xl font-bold tracking-wide">
-            Luca's Home Improvement
-          </h1>
+            className="h-10 w-auto object-contain transition-transform duration-300 hover:scale-[1.07]"
+          />
         </Link>
 
         {/* Desktop Menu */}

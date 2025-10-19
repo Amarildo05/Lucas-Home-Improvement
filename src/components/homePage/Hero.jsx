@@ -26,7 +26,9 @@ export default function Hero() {
         icon="pi pi-phone"
         iconPos="left"
         onClick={() => navigate("/contact")}
-        className="!bg-brand-green border-none text-brand-dark hover:text-brand-light font-semibold px-6 py-3 transform hover:scale-105 transition-all duration-300 gap-2"
+        className="!bg-brand-green border-none text-white hover:text-brand-dark font-semibold 
+               text-sm md:text-base px-4 md:px-6 py-2 md:py-3 
+               transform hover:scale-105 transition-all duration-300 gap-2"
       />
     </section>
   );
