@@ -6,14 +6,14 @@ export default function Contact() {
     >
       <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
 
-      <div className="flex flex-col items-center gap-4 text-base md:text-lg font-medium text-brand-dark">
+      <div className="flex flex-col items-center gap-4 text-sm md:text-lg font-medium text-brand-dark">
         <div className="flex items-center justify-center gap-8">
           {/* Phone */}
           <a
             href="tel:9043296973"
             className="flex items-center gap-2 transition-transform duration-300 hover:scale-110 hover:text-brand-green"
           >
-            <i className="pi pi-phone text-xl font-bold"></i>
+            <i className="pi pi-phone text-lg md:text-xl font-bold"></i>
             <span>9043296973</span>
           </a>
 
@@ -24,7 +24,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 transition-transform duration-300 hover:scale-110 hover:text-brand-green"
           >
-            <i className="pi pi-whatsapp text-xl font-bold"></i>
+            <i className="pi pi-whatsapp text-lg md:text-xl font-bold"></i>
             <span>WhatsApp</span>
           </a>
         </div>
@@ -44,7 +44,7 @@ export default function Contact() {
             }}
             className="flex items-center justify-center gap-2 transition-transform duration-300 hover:scale-110 hover:text-brand-green"
           >
-            <i className="pi pi-envelope text-xl font-bold"></i>
+            <i className="pi pi-envelope text-lg md:text-xl font-bold"></i>
             <span>inprovementhomes84@gmail.com</span>
           </a>
         </div>
