@@ -10,7 +10,7 @@ export default function Navbar() {
     { label: "Home", icon: "pi pi-home", url: "/" },
     { label: "Services", icon: "pi pi-briefcase", url: "/services" },
     { label: "Projects", icon: "pi pi-images", url: "/projects" },
-    { label: "Contact", icon: "pi pi-envelope", url: "/contact" },
+    { label: "Contact", icon: "pi pi-phone", url: "/contact" },
   ];
 
   return (

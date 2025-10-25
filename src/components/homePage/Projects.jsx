@@ -31,7 +31,8 @@ export default function Projects() {
       id="projects"
       className="py-12 md:py-16 px-14 md:px-20 bg-[#F0F0F0] text-brand-dark"
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 flex justify-center items-center gap-3">
+        <i className="pi pi-images text-brand-green text-3xl md:text-4xl font-bold mt-2"></i>
         Our Projects
       </h2>
 
