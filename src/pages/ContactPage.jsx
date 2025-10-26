@@ -6,7 +6,7 @@ import ContactMap from "../components/contactPage/ContactMap";
 
 export default function ContactPage() {
   return (
-    <div className="py-16 text-brand-dark">
+    <div className="py-12 md:py-16 text-brand-dark">
       <ContactHero />
       <ContactInfo />
       <ContactMap />

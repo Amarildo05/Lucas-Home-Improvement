@@ -7,7 +7,7 @@ export default function ServicesHero() {
       <p className="text-gray-600 text-sm md:text-base leading-relaxed">
         From renovations to repairs — we handle every detail to make your home
         beautiful, functional, and safe. Quality workmanship. Trusted results.
-        <i className="pi pi-check text-brand-green text-lg ms-2" />
+        <i className="pi pi-check-circle text-brand-green text-lg ms-2" />
       </p>
     </header>
   );

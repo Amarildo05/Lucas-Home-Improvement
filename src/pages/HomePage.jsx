@@ -1,15 +1,15 @@
-import Contact from "../components/homePage/Contact";
 import Hero from "../components/homePage/Hero";
-import Projects from "../components/homePage/Projects";
-import Services from "../components/homePage/Services";
+import ServicesPreview from "../components/homePage/ServicesPreview";
+import ProjectsPreview from "../components/homePage/ProjectsPreview";
+import ContactPreview from "../components/homePage/ContactPreview";
 
 export default function HomePage() {
   return (
     <div>
       <Hero />
-      <Services />
-      <Projects />
-      <Contact />
+      <ServicesPreview />
+      <ProjectsPreview />
+      <ContactPreview />
     </div>
   );
 }

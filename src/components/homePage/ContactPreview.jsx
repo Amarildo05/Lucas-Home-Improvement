@@ -1,8 +1,8 @@
-export default function Contact() {
+export default function ContactPreview() {
   return (
     <section
       id="contact"
-      className="relative py-16 px-6 md:px-20 text-center overflow-hidden"
+      className="relative py-14 md:py-16 px-6 md:px-20 text-center overflow-hidden"
     >
       <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
 
