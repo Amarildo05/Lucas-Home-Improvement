@@ -6,12 +6,12 @@ import ContactMap from "../components/contactPage/ContactMap";
 
 export default function ContactPage() {
   return (
-    <section className="py-16 text-brand-dark">
+    <div className="py-16 text-brand-dark">
       <ContactHero />
       <ContactInfo />
       <ContactMap />
       <ContactForm />
       <ContactHours />
-    </section>
+    </div>
   );
 }
