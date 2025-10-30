@@ -13,6 +13,7 @@ export const services = [
     ],
     icon: "pi pi-th-large",
     image: "/Services/KitchenRemodeling.jpg",
+    featured: true,
   },
   {
     title: "Bathroom Remodeling",
@@ -28,6 +29,7 @@ export const services = [
     ],
     icon: "pi pi-sliders-v",
     image: "/Services/BathroomRemodeling.jpg",
+    featured: true,
   },
   {
     title: "Flooring Installation",
@@ -43,6 +45,7 @@ export const services = [
     ],
     icon: "pi pi-objects-column",
     image: "/Services/FlooringInstallation.jpg",
+    featured: true,
   },
   {
     title: "Interior & Exterior Painting",
@@ -58,6 +61,7 @@ export const services = [
     ],
     icon: "pi pi-palette",
     image: "/Services/Interior&ExteriorPainting.jpg",
+    featured: true,
   },
   {
     title: "Drywall & Trim Work",
@@ -73,6 +77,7 @@ export const services = [
     ],
     icon: "pi pi-wrench",
     image: "/Services/Drywall&TrimWork.png",
+    featured: false,
   },
   {
     title: "Door Installation & Replacement",
@@ -88,6 +93,7 @@ export const services = [
     ],
     icon: "pi pi-home",
     image: "/Services/DoorInstallation&Replacement.jpg",
+    featured: false,
   },
   {
     title: "Wooden Fence Installation",
@@ -103,6 +109,7 @@ export const services = [
     ],
     icon: "pi pi-bars",
     image: "/Services/WoodenFenceInstallation.jpg",
+    featured: false,
   },
   {
     title: "General Home Improvements",
@@ -118,5 +125,6 @@ export const services = [
     ],
     icon: "pi pi-cog",
     image: "/Services/GeneralHomeImprovements.jpg",
+    featured: false,
   },
 ];

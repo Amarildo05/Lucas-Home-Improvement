@@ -13,11 +13,13 @@ import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BackTop from "./components/common/BackTop";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 export default function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />

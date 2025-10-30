@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { Card } from "primereact/card";
-import { services } from "../../data/servicesData";
+import { services as allServices } from "../../data/servicesData";
 import ServiceModal from "./ServiceModal";
 
-export default function ServicesCards() {
+export default function ServicesCards({ items }) {
   const [selectedService, setSelectedService] = useState(null);
+
+  // use provided items (featured subset) or fall back to full data
+  const displayedServices = Array.isArray(items) ? items : allServices;
 
   return (
     <>
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-8 sm:px-0">
-        {services.map((service, idx) => (
+        {displayedServices.map((service, idx) => (
           <Card
-            key={idx}
+            key={service.title + idx}
             header={
               <img
                 src={service.image}
