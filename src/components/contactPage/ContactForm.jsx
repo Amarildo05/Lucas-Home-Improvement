@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function ContactForm() {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,6 +11,17 @@ export default function ContactForm() {
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  // Prefill message if it comes from navigation state (from a service)
+  useEffect(() => {
+    if (location.state?.prefillMessage) {
+      // Update the message field in the form automatically
+      setFormData((prev) => ({
+        ...prev,
+        message: location.state.prefillMessage,
+      }));
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));

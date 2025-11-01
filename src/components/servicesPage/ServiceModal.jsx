@@ -21,13 +21,18 @@ export default function ServiceModal({ visible, onHide, service }) {
   );
 
   const handleRequestService = () => {
-    navigate("/contact");
+    // When user clicks "Request Service", navigate to the Contact page and send along a small piece of data using React Router state
+    navigate("/contact", {
+      state: {
+        prefillMessage: `I'm interested in learning more about your ${title} service.`,
+      },
+    });
 
     // Wait for navigation to complete before scrolling
     setTimeout(() => {
       const element = document.getElementById("contact-form");
       if (element) {
-        const yOffset = -100; // adjust this number to move up/down as needed
+        const yOffset = -100;
         const y =
           element.getBoundingClientRect().top + window.scrollY + yOffset;
         window.scrollTo({ top: y, behavior: "smooth" });
