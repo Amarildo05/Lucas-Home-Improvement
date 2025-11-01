@@ -45,7 +45,7 @@ export const services = [
     ],
     icon: "pi pi-objects-column",
     image: "/Services/FlooringInstallation.jpg",
-    featured: true,
+    featured: false,
   },
   {
     title: "Interior & Exterior Painting",
@@ -61,7 +61,7 @@ export const services = [
     ],
     icon: "pi pi-palette",
     image: "/Services/Interior&ExteriorPainting.jpg",
-    featured: true,
+    featured: false,
   },
   {
     title: "Drywall & Trim Work",
@@ -77,7 +77,7 @@ export const services = [
     ],
     icon: "pi pi-wrench",
     image: "/Services/Drywall&TrimWork.png",
-    featured: false,
+    featured: true,
   },
   {
     title: "Door Installation & Replacement",
@@ -125,6 +125,6 @@ export const services = [
     ],
     icon: "pi pi-cog",
     image: "/Services/GeneralHomeImprovements.jpg",
-    featured: false,
+    featured: true,
   },
 ];

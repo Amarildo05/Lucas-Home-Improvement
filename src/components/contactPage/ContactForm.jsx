@@ -78,7 +78,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="px-7 md:px-20">
+    <div id="contact-form" className="px-7 md:px-20">
       <form
         onSubmit={handleSubmit}
         noValidate

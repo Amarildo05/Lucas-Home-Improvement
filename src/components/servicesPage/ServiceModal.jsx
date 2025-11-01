@@ -1,7 +1,10 @@
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
+import { useNavigate } from "react-router-dom";
 
 export default function ServiceModal({ visible, onHide, service }) {
+  const navigate = useNavigate();
+
   if (!service) return null;
 
   const { title, details, features, icon, image } = service;
@@ -16,6 +19,21 @@ export default function ServiceModal({ visible, onHide, service }) {
       </span>
     </div>
   );
+
+  const handleRequestService = () => {
+    navigate("/contact");
+
+    // Wait for navigation to complete before scrolling
+    setTimeout(() => {
+      const element = document.getElementById("contact-form");
+      if (element) {
+        const yOffset = -100; // adjust this number to move up/down as needed
+        const y =
+          element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 20);
+  };
 
   return (
     <Dialog
@@ -53,10 +71,10 @@ export default function ServiceModal({ visible, onHide, service }) {
 
         <div className="flex justify-center pt-2">
           <Button
-            label="Request a Quote"
+            label="Request Service"
             icon="pi pi-arrow-right"
             iconPos="right"
-            onClick={() => (window.location.href = "/contact")}
+            onClick={handleRequestService}
             className="!bg-brand-green border-none text-white hover:text-brand-dark 
               font-semibold text-sm md:text-base 
               px-5 md:px-7 py-3 
