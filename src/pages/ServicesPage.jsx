@@ -4,7 +4,7 @@ import ServicesCTA from "../components/servicesPage/ServicesCTA";
 
 export default function ServicesPage() {
   return (
-    <div className="bg-brand-light text-brand-dark py-12 md:py-16 px-6 md:px-20">
+    <div className="bg-brand-light text-brand-dark py-12 md:py-16 px-0 md:px-20">
       <ServicesHero />
       <ServicesCards />
       <ServicesCTA />

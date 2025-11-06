@@ -16,6 +16,22 @@ export const services = [
     featured: true,
   },
   {
+    title: "Interior & Exterior Painting",
+    description:
+      "High-quality painting services that transform and protect your space.",
+    details:
+      "Our painting services refresh and protect your property using professional surface prep and premium coatings.",
+    features: [
+      "Color consulting and matching",
+      "Detailed surface preparation",
+      "Weather-resistant exterior painting",
+      "Clean and fast finishing",
+    ],
+    icon: "pi pi-palette",
+    image: "/Services/Interior&ExteriorPainting.jpg",
+    featured: false,
+  },
+  {
     title: "Bathroom Remodeling",
     description:
       "Stylish and durable bathroom renovations for a comfortable and refreshing space.",
@@ -48,22 +64,6 @@ export const services = [
     featured: false,
   },
   {
-    title: "Interior & Exterior Painting",
-    description:
-      "High-quality painting services that transform and protect your space.",
-    details:
-      "Our painting services refresh and protect your property using professional surface prep and premium coatings.",
-    features: [
-      "Color consulting and matching",
-      "Detailed surface preparation",
-      "Weather-resistant exterior painting",
-      "Clean and fast finishing",
-    ],
-    icon: "pi pi-palette",
-    image: "/Services/Interior&ExteriorPainting.jpg",
-    featured: false,
-  },
-  {
     title: "Drywall & Trim Work",
     description:
       "Smooth drywall repairs and trim installation for a polished interior finish.",
@@ -77,7 +77,7 @@ export const services = [
     ],
     icon: "pi pi-wrench",
     image: "/Services/Drywall&TrimWork.png",
-    featured: true,
+    featured: false,
   },
   {
     title: "Door Installation & Replacement",

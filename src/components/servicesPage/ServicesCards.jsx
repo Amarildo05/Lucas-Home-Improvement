@@ -11,7 +11,7 @@ export default function ServicesCards({ items }) {
 
   return (
     <>
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-8 sm:px-0">
+      <div className="grid gap-10 lg:gap-14 sm:grid-cols-2 lg:grid-cols-3 px-14 md:px-20">
         {displayedServices.map((service, idx) => (
           <Card
             key={service.title + idx}
