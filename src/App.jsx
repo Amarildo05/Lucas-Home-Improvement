@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
+import AdminLogin from "./admin/Login";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/admin" element={<AdminLogin />} />
       </Routes>
       <BackTop />
       <Footer />
