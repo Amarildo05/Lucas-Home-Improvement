@@ -1,4 +1,4 @@
-import { logoutAdmin } from "../utils/auth";
+import { logoutAdmin } from "./utils/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
@@ -16,6 +16,14 @@ export default function Dashboard() {
         className="px-4 py-2 bg-red-600 text-white rounded"
       >
         Logout
+      </button>
+      <button
+        onClick={() => {
+          navigate("/admin/add-project");
+        }}
+        className="px-4 py-2 bg-green-600 text-white rounded"
+      >
+        Create Project
       </button>
     </div>
   );

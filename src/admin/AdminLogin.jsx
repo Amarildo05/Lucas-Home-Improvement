@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabaseClient";
-import { setAdminLoggedIn } from "../utils/auth";
+import { setAdminLoggedIn } from "./utils/auth";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");

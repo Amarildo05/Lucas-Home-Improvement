@@ -11,38 +11,45 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import AdminLogin from "./admin/AdminLogin";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import BackTop from "./components/common/BackTop";
-import ScrollToTop from "./components/common/ScrollToTop";
-import ProtectedRoute from "./components/common/ProtectedRoute";
-
 import Dashboard from "./admin/Dashboard";
 import AddProject from "./admin/AddProject";
+import ProtectedRoute from "./admin/utils/ProtectedRoute";
+import PublicLayout from "./layouts/PublicLayout";
+import AdminLayout from "./layouts/AdminLayout";
 
 export default function App() {
   return (
     <Router>
-      <Navbar />
-      <ScrollToTop />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/admin/add-project" element={<AddProject />} />
+        {/* PUBLIC LAYOUT */}
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+
+        {/* ADMIN LAYOUT */}
+        <Route element={<AdminLayout />}>
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/add-project"
+            element={
+              <ProtectedRoute>
+                <AddProject />
+              </ProtectedRoute>
+            }
+          />
+        </Route>
       </Routes>
-      <BackTop />
-      <Footer />
     </Router>
   );
 }

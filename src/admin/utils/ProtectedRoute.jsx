@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { isAdminLoggedIn } from "../../utils/auth";
+import { isAdminLoggedIn } from "./auth";
 
 const ProtectedRoute = ({ children }) => {
   if (!isAdminLoggedIn()) {
