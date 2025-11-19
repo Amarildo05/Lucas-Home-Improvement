@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabaseClient";
+import { setAdminLoggedIn } from "../utils/auth";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
@@ -29,6 +30,9 @@ export default function AdminLogin() {
     } else {
       setError("Wrong password.");
     }
+
+    setAdminLoggedIn();
+    navigate("/admin/dashboard");
   };
 
   return (
