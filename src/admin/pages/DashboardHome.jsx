@@ -1,7 +1,7 @@
-import { logoutAdmin } from "./utils/auth";
 import { useNavigate } from "react-router-dom";
+import { logoutAdmin } from "../utils/auth";
 
-export default function Dashboard() {
+export default function DashboardHome() {
   const navigate = useNavigate();
 
   return (

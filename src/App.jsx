@@ -9,13 +9,13 @@ import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
-import AdminLogin from "./admin/AdminLogin";
 
-import Dashboard from "./admin/Dashboard";
-import AddProject from "./admin/AddProject";
-import ProtectedRoute from "./admin/utils/ProtectedRoute";
-import PublicLayout from "./layouts/PublicLayout";
 import AdminLayout from "./layouts/AdminLayout";
+import AdminLogin from "./admin/pages/AdminLogin";
+import ProtectedRoute from "./admin/utils/ProtectedRoute";
+import DashboardHome from "./admin/pages/DashboardHome";
+import AddProject from "./admin/pages/AddProject";
+import PublicLayout from "./layouts/PublicLayout";
 
 export default function App() {
   return (
@@ -36,7 +36,7 @@ export default function App() {
             path="/admin/dashboard"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <DashboardHome />
               </ProtectedRoute>
             }
           />
