@@ -16,6 +16,7 @@ import ProtectedRoute from "./admin/utils/ProtectedRoute";
 import DashboardHome from "./admin/pages/DashboardHome";
 import AddProject from "./admin/pages/AddProject";
 import PublicLayout from "./layouts/PublicLayout";
+import ViewProjects from "./admin/pages/ViewProjects";
 
 export default function App() {
   return (
@@ -29,25 +30,20 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Route>
 
+        {/* ADMIN LOGIN */}
+        <Route path="/admin" element={<AdminLogin />} />
+
         {/* ADMIN LAYOUT */}
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<AdminLogin />} />
-          <Route
-            path="/admin/dashboard"
-            element={
-              <ProtectedRoute>
-                <DashboardHome />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/add-project"
-            element={
-              <ProtectedRoute>
-                <AddProject />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="/admin/dashboard" element={<DashboardHome />} />
+          <Route path="/admin/add-project" element={<AddProject />} />
+          <Route path="/admin/projects" element={<ViewProjects />} />
         </Route>
       </Routes>
     </Router>

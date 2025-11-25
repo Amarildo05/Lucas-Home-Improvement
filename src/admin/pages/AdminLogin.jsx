@@ -25,14 +25,11 @@ export default function AdminLogin() {
 
     // Compare passwords
     if (password === data.admin_pass) {
-      localStorage.setItem("isAdmin", "true");
+      setAdminLoggedIn();
       navigate("/admin/dashboard");
     } else {
       setError("Wrong password.");
     }
-
-    setAdminLoggedIn();
-    navigate("/admin/dashboard");
   };
 
   return (
