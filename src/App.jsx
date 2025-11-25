@@ -13,10 +13,10 @@ import ContactPage from "./pages/ContactPage";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminLogin from "./admin/pages/AdminLogin";
 import ProtectedRoute from "./admin/utils/ProtectedRoute";
-import DashboardHome from "./admin/pages/DashboardHome";
-import AddProject from "./admin/pages/AddProject";
 import PublicLayout from "./layouts/PublicLayout";
-import ViewProjects from "./admin/pages/ViewProjects";
+import DashboardHome from "./admin/pages/dashboard/DashboardHome";
+import AddProject from "./admin/pages/dashboard/AddProject";
+import ViewProjects from "./admin/pages/dashboard/ViewProjects";
 
 export default function App() {
   return (
