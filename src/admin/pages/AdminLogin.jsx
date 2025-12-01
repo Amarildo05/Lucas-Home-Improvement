@@ -33,24 +33,43 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-6 rounded-xl shadow-md w-80 text-center">
-        <h2 className="text-xl font-bold mb-4">Admin Login</h2>
+    <div className="min-h-screen flex items-center justify-center bg-brand-light p-6">
+      <div
+        className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl 
+        w-full max-w-sm text-center border border-brand-light"
+      >
+        <div className="flex items-center justify-center mb-6">
+          <img
+            src="/Lucas-Home-Improvement.png"
+            alt="Lucas Home Improvement Logo"
+            className="h-20 w-auto"
+          />
+
+          <h2 className="text-2xl font-extrabold text-brand-dark -ms-3 mt-9">
+            Admin Login
+          </h2>
+        </div>
 
         <input
           type="password"
-          className="w-full p-2 border rounded mb-3"
-          placeholder="Enter password..."
+          className="w-full p-3 border border-brand-light rounded-lg 
+          focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green
+          transition-all duration-200"
+          placeholder="Enter admin password..."
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {error && <p className="text-red-500 mb-3">{error}</p>}
+        {error && <p className="text-red-500 mt-2 font-medium">{error}</p>}
 
         <button
-          className="w-full bg-blue-600 text-white p-2 rounded"
           onClick={handleLogin}
+          className="w-full mt-5 bg-brand-green text-white font-semibold 
+          py-3 rounded-lg shadow-md hover:shadow-lg 
+          hover:scale-[1.03] hover:text-brand-dark 
+          transition-all duration-300 flex items-center justify-center gap-2"
         >
+          <i className="pi pi-lock"></i>
           Login
         </button>
       </div>
