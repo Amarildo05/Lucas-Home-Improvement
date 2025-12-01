@@ -5,8 +5,12 @@ export default function Header({ title }) {
     <header className="w-full bg-brand-light shadow-md px-6 py-4 flex justify-between items-center">
       <h1 className="text-2xl font-semibold text-brand-dark">{title}</h1>
 
-      <button className="text-brand-dark hover:text-brand-green transition-all">
-        <i className="pi pi-user text-2xl"></i>
+      <button className="transition-all hover:scale-[1.03]">
+        <img
+          src="/Lucas-Home-Improvement.png"
+          alt="Admin Logo"
+          className="w-10 h-10 object-contain"
+        />
       </button>
     </header>
   );

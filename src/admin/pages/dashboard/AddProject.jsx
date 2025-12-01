@@ -39,15 +39,19 @@ export default function AddProject() {
 
   return (
     <div className="p-6 max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Add New Project</h2>
+      <h2 className="text-3xl font-extrabold text-brand-dark mb-6">
+        Add New Project
+      </h2>
 
       {/* FORM */}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
         {/* TITLE */}
         <input
           type="text"
           placeholder="Project Title"
-          className="w-full p-2 border rounded"
+          className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
+          focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green
+          transition-all duration-300"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
@@ -56,7 +60,9 @@ export default function AddProject() {
         {/* DESCRIPTION */}
         <textarea
           placeholder="Project Description"
-          className="w-full p-2 border rounded"
+          className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
+          focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green
+          transition-all duration-300"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
@@ -67,14 +73,19 @@ export default function AddProject() {
         <input
           type="text"
           placeholder="Cover Image URL (optional)"
-          className="w-full p-2 border rounded"
+          className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
+          focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green
+          transition-all duration-300"
           value={coverImage}
           onChange={(e) => setCoverImage(e.target.value)}
         />
 
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="w-full bg-brand-green text-white font-semibold 
+          py-3 rounded-lg shadow-md hover:shadow-xl active:scale-[0.98]
+          hover:scale-[1.03] hover:text-brand-dark 
+          transition-all duration-300"
         >
           Save Project
         </button>

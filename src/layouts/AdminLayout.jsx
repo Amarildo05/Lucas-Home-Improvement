@@ -8,8 +8,8 @@ export default function AdminLayout() {
   // Extract the title based on route (simple auto-title)
   const getTitle = () => {
     if (location.pathname.includes("dashboard")) return "Dashboard";
-    if (location.pathname.includes("add-project")) return "Add New Project";
-    if (location.pathname.includes("projects")) return "All Projects";
+    if (location.pathname.includes("add-project")) return "New Project";
+    if (location.pathname.includes("projects")) return "Projects";
     return "Admin";
   };
 

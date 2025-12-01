@@ -127,7 +127,7 @@ export default function ContactForm() {
               placeholder="Enter your full name"
               required
               className="w-full border border-gray-300 rounded-lg px-3 py-1.5 md:px-4 md:py-2 
-                       focus:outline-none focus:border-brand-green text-sm md:text-base"
+                       focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green text-sm md:text-base"
             />
           </div>
 
@@ -143,7 +143,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your email"
               className="w-full border border-gray-300 rounded-lg px-3 py-1.5 md:px-4 md:py-2 
-                       focus:outline-none focus:border-brand-green text-sm md:text-base"
+                       focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green text-sm md:text-base"
             />
           </div>
 
@@ -159,7 +159,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Enter your phone number"
               className="w-full border border-gray-300 rounded-lg px-3 py-1.5 md:px-4 md:py-2 
-                       focus:outline-none focus:border-brand-green text-sm md:text-base"
+                       focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green text-sm md:text-base"
             />
           </div>
 
@@ -176,7 +176,7 @@ export default function ContactForm() {
               placeholder="Type your message"
               required
               className="w-full border border-gray-300 rounded-lg px-3 py-1.5 md:px-4 md:py-2 
-                       focus:outline-none focus:border-brand-green text-sm md:text-base resize-none"
+                       focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green text-sm md:text-base resize-none"
             ></textarea>
           </div>
 

@@ -20,6 +20,7 @@ export default function AdminLogin() {
 
     if (error) {
       setError("Server error.");
+      setTimeout(() => setError(""), 4000);
       return;
     }
 
@@ -29,11 +30,20 @@ export default function AdminLogin() {
       navigate("/admin/dashboard");
     } else {
       setError("Wrong password.");
+      setTimeout(() => setError(""), 4000);
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-brand-light p-6">
+      <button
+        onClick={() => navigate("/")}
+        className="absolute top-4 left-4 bg-white/80 backdrop-blur-md border border-brand-light text-brand-dark font-semibold px-3 py-1.5 rounded-lg hover:bg-white hover:scale-[1.04] transition-all duration-300 flex items-center gap-1.5 text-base"
+      >
+        <i className="pi pi-arrow-left text-brand-green text-sm mt-1"></i>
+        Go To Homepage
+      </button>
+
       <div
         className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl 
         w-full max-w-sm text-center border border-brand-light"
