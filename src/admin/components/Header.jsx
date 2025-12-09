@@ -9,7 +9,7 @@ export default function Header({ title }) {
         <img
           src="/Lucas-Home-Improvement.png"
           alt="Admin Logo"
-          className="w-10 h-10 object-contain"
+          className="w-10 h-10 object-contain rounded-full"
         />
       </button>
     </header>
