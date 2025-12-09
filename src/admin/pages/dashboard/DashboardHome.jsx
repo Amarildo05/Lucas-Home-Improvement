@@ -28,7 +28,12 @@ export default function DashboardHome() {
         <div>
           <h1 className="text-3xl font-extrabold text-brand-dark">
             Welcome Back, Elidon
-            <i className="pi pi-user text-brand-green text-3xl ps-2"></i>
+            <i
+              className="pi pi-user text-brand-green text-3xl ps-2 font-bold"
+              style={{
+                textShadow: "0 0 2px currentColor",
+              }}
+            ></i>
           </h1>
           <p className="text-brand-dark/70 mt-1 text-lg">
             Here's what's happening today.
@@ -50,7 +55,7 @@ export default function DashboardHome() {
           {/* Will add more stats later ... */}
         </div>
 
-        {/* SHortcut Buttons */}
+        {/* Shortcut Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <button
             onClick={() => navigate("/admin/add-project")}
