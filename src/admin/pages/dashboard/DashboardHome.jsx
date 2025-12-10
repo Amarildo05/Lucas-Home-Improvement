@@ -29,7 +29,7 @@ export default function DashboardHome() {
           <h1 className="text-3xl font-extrabold text-brand-dark">
             Welcome Back, Elidon
             <i
-              className="pi pi-user text-brand-green text-3xl ps-2 font-bold"
+              className="pi pi-user text-brand-green text-3xl ps-3 font-bold"
               style={{
                 textShadow: "0 0 2px currentColor",
               }}

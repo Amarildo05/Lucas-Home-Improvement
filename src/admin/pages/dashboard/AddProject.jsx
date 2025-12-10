@@ -2,14 +2,17 @@ import { useState } from "react";
 import { supabase } from "../../../../supabaseClient";
 
 export default function AddProject() {
-  // FORM STATE (matches Supabase fields)
+  // Form State (Supabase fields)
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  // Optional: later we will replace this with a real file upload
+  // Replace this with a real file upload
   const [coverImage, setCoverImage] = useState("");
 
-  // SUBMIT PROJECT TO SUPABASE
+  // Added message states
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,16 +28,21 @@ export default function AddProject() {
     // Error handling
     if (error) {
       console.error(error);
-      alert("❌ Error saving project. Check console.");
-    } else {
-      alert("✅ Project created successfully!");
-      console.log(data);
-
-      // Clear form
-      setTitle("");
-      setDescription("");
-      setCoverImage("");
+      setError("Error saving project. Please try again. ❌");
+      setTimeout(() => setError(""), 4000);
+      return;
     }
+
+    // Success message
+    setSuccess("Project created successfully! ✅");
+    setTimeout(() => setSuccess(""), 4000);
+
+    console.log(data);
+
+    // Clear form
+    setTitle("");
+    setDescription("");
+    setCoverImage("");
   };
 
   return (
@@ -43,9 +51,20 @@ export default function AddProject() {
         Add New Project
       </h2>
 
-      {/* FORM */}
+      {/* Messages */}
+      {error && (
+        <div className="text-center text-red-500 text-sm md:text-base font-medium mb-3">
+          {error}
+        </div>
+      )}
+      {success && (
+        <div className="text-center text-brand-green text-sm md:text-base font-medium mb-3">
+          {success}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* TITLE */}
+        {/* Title */}
         <input
           type="text"
           placeholder="Project Title"
@@ -57,7 +76,7 @@ export default function AddProject() {
           required
         />
 
-        {/* DESCRIPTION */}
+        {/* Description*/}
         <textarea
           placeholder="Project Description"
           className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
@@ -68,8 +87,7 @@ export default function AddProject() {
           rows={4}
         />
 
-        {/* COVER IMAGE (TEMPORARY TEXT INPUT) */}
-        {/* Later we replace this with real image upload */}
+        {/* Replace this with real image upload */}
         <input
           type="text"
           placeholder="Cover Image URL (optional)"
