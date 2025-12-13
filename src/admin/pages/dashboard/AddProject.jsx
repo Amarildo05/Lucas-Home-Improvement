@@ -6,20 +6,27 @@ export default function AddProject() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  // Added message states
+  // Photos state
+  const [photos, setPhotos] = useState([]);
+
+  // Message states
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  // Handle file selection
+  const handleFileChange = (e) => {
+    setPhotos(Array.from(e.target.files));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Insert only the fields that actually exist in your table
-    const { data, error } = await supabase.from("projects").insert([
-      {
-        title,
-        description,
-      },
-    ]);
+    const { data, error } = await supabase
+      .from("projects")
+      .insert([{ title, description }])
+      .select()
+      .single();
 
     // Error handling
     if (error) {
@@ -29,15 +36,48 @@ export default function AddProject() {
       return;
     }
 
+    const projectId = data.id;
+
+    // Upload photos if any
+    if (photos.length > 0) {
+      for (let i = 0; i < photos.length; i++) {
+        const file = photos[i];
+        const filePath = `${projectId}/${Date.now()}-${file.name}`;
+
+        // Upload to Supabase Storage
+        const { error: uploadError } = await supabase.storage
+          .from("project-images")
+          .upload(filePath, file);
+
+        if (uploadError) {
+          console.error(uploadError);
+          continue;
+        }
+
+        // Get public URL
+        const { data: publicUrlData } = supabase.storage
+          .from("project-images")
+          .getPublicUrl(filePath);
+
+        // Insert into project_photos table
+        await supabase.from("project_photos").insert([
+          {
+            project_id: projectId,
+            image_url: publicUrlData.publicUrl,
+            position: i, // first image = cover
+          },
+        ]);
+      }
+    }
+
     // Success message
     setSuccess("Project created successfully! ✅");
     setTimeout(() => setSuccess(""), 4000);
 
-    console.log(data);
-
     // Clear form
     setTitle("");
     setDescription("");
+    setPhotos([]);
   };
 
   return (
@@ -80,6 +120,17 @@ export default function AddProject() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
+        />
+
+        {/* Photo Upload */}
+        <input
+          type="file"
+          multiple
+          accept="image/*"
+          onChange={handleFileChange}
+          className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
+          focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green
+          transition-all duration-300"
         />
 
         <button
