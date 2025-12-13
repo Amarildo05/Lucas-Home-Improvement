@@ -6,9 +6,6 @@ export default function AddProject() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  // Replace this with a real file upload
-  const [coverImage, setCoverImage] = useState("");
-
   // Added message states
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -21,7 +18,6 @@ export default function AddProject() {
       {
         title,
         description,
-        cover_image: coverImage || null, // <= optional for now
       },
     ]);
 
@@ -42,7 +38,6 @@ export default function AddProject() {
     // Clear form
     setTitle("");
     setDescription("");
-    setCoverImage("");
   };
 
   return (
@@ -76,7 +71,7 @@ export default function AddProject() {
           required
         />
 
-        {/* Description*/}
+        {/* Description */}
         <textarea
           placeholder="Project Description"
           className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
@@ -85,17 +80,6 @@ export default function AddProject() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
-        />
-
-        {/* Replace this with real image upload */}
-        <input
-          type="text"
-          placeholder="Cover Image URL (optional)"
-          className="w-full p-3.5 border border-brand-light rounded-lg shadow-sm bg-white
-          focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-brand-green
-          transition-all duration-300"
-          value={coverImage}
-          onChange={(e) => setCoverImage(e.target.value)}
         />
 
         <button
