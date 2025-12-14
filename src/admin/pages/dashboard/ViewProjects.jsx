@@ -13,10 +13,19 @@ export default function ViewProjects() {
   const fetchProjects = async () => {
     const { data, error } = await supabase
       .from("projects")
-      .select("*")
+      .select("id, title, description, project_photos(image_url, position)")
       .order("id", { ascending: false });
 
-    if (!error) setProjects(data);
+    if (!error && data) {
+      const formatted = data.map((project) => ({
+        ...project,
+        cover_image:
+          project.project_photos?.find((p) => p.position === 0)?.image_url ||
+          null,
+      }));
+
+      setProjects(formatted);
+    }
 
     setLoading(false);
   };

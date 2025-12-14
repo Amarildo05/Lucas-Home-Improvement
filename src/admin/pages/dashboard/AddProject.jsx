@@ -21,7 +21,7 @@ export default function AddProject() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Insert only the fields that actually exist in your table
+    // Inserted only the fields that actually exist in Supabase table
     const { data, error } = await supabase
       .from("projects")
       .insert([{ title, description }])
@@ -64,7 +64,7 @@ export default function AddProject() {
           {
             project_id: projectId,
             image_url: publicUrlData.publicUrl,
-            position: i, // first image = cover
+            position: i, // first image = card cover
           },
         ]);
       }
