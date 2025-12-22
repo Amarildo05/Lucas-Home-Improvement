@@ -1,5 +1,14 @@
 import { Card } from "primereact/card";
 
+/**
+ * Expects already-formatted data:
+ * {
+ *   id,
+ *   title,
+ *   description,
+ *   cover_image
+ * }
+ */
 export default function ProjectsCards({ items }) {
   if (!Array.isArray(items)) return null;
 
