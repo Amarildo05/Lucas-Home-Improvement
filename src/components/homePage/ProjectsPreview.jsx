@@ -1,6 +1,6 @@
-import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { useNavigate } from "react-router-dom";
+import ProjectsCards from "../projectsPage/ProjectsCards";
 
 const projects = [
   {
@@ -36,39 +36,17 @@ export default function ProjectsPreview() {
         Our Projects
       </h2>
 
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 mb-10">
-        {projects.map(({ title, description, img }, idx) => (
-          <Card
-            key={idx}
-            header={
-              <img
-                src={img}
-                alt={title}
-                loading="lazy"
-                className="rounded-t-2xl h-60 w-full object-cover"
-              />
-            }
-            className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 bg-white border-none"
-          >
-            <div className="p-6 text-center">
-              <h3 className="font-bold text-lg mb-2">{title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {description}
-              </p>
-            </div>
-          </Card>
-        ))}
-      </div>
+      <ProjectsCards items={projects} />
 
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-10">
         <Button
           label="Discover Our Work"
           icon="pi pi-arrow-right"
           iconPos="right"
           onClick={() => navigate("/projects")}
           className="!bg-brand-green border-none text-white hover:text-brand-dark font-semibold 
-               text-sm md:text-base px-4 md:px-6 py-2 md:py-3 
-               transform hover:scale-105 transition-all duration-300 gap-2"
+            text-sm md:text-base px-4 md:px-6 py-2 md:py-3 
+            transform hover:scale-105 transition-all duration-300 gap-2"
         />
       </div>
     </section>
