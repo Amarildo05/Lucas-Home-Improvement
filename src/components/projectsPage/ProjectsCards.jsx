@@ -7,14 +7,20 @@ export default function ProjectsCards({ items }) {
     <div className="grid gap-10 lg:gap-14 sm:grid-cols-2 lg:grid-cols-3 px-14 md:px-20">
       {items.map((project, idx) => (
         <Card
-          key={project.title + idx}
+          key={project.id || project.title + idx}
           header={
-            <img
-              src={project.img}
-              alt={project.title}
-              loading="lazy"
-              className="rounded-t-2xl h-56 w-full object-cover"
-            />
+            project.cover_image ? (
+              <img
+                src={project.cover_image}
+                alt={project.title}
+                loading="lazy"
+                className="rounded-t-2xl h-56 w-full object-cover"
+              />
+            ) : (
+              <div className="rounded-t-2xl h-56 w-full bg-brand-light flex items-center justify-center text-brand-dark/50">
+                No Image
+              </div>
+            )
           }
           className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white border-none"
         >

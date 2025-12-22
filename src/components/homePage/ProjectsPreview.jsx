@@ -1,30 +1,56 @@
+import { useEffect, useState } from "react";
+import { supabase } from "../../../supabaseClient";
 import { Button } from "primereact/button";
 import { useNavigate } from "react-router-dom";
 import ProjectsCards from "../projectsPage/ProjectsCards";
 
-const projects = [
-  {
-    title: "Modern Home Renovation",
-    description:
-      "Complete home transformation featuring smart lighting, energy-efficient systems, and modern interiors.",
-    img: "/Homepage/Projects/Modern Home Renovation test.jpg",
-  },
-  {
-    title: "Kitchen & Bathroom Remodel",
-    description:
-      "Elegant kitchen and bathroom remodel with premium materials and clean designs.",
-    img: "/Homepage/Projects/Kitchen & Bathroom Remodel test.jpg",
-  },
-  {
-    title: "Exterior & Roofing Upgrade",
-    description:
-      "Durable roofing and stunning exterior facelift for a refreshed home look.",
-    img: "/Homepage/Projects/Exterior & Roofing Upgrade test.jpg",
-  },
-];
-
 export default function ProjectsPreview() {
   const navigate = useNavigate();
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      // Fetch projects + first photo (cover)
+      const { data, error } = await supabase
+        .from("projects")
+        .select(
+          `
+          id,
+          title,
+          description,
+          project_photos (
+            image_url,
+            position
+          )
+        `
+        )
+        .order("id", { ascending: false })
+        .limit(3);
+
+      if (error) {
+        console.error("Error fetching projects:", error);
+        return;
+      }
+
+      // Format data for ProjectsCards
+      const formattedProjects = data.map((project) => {
+        const coverPhoto = project.project_photos?.find(
+          (photo) => photo.position === 0
+        );
+
+        return {
+          id: project.id,
+          title: project.title,
+          description: project.description,
+          cover_image: coverPhoto?.image_url || null,
+        };
+      });
+
+      setProjects(formattedProjects);
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <section
