@@ -3,6 +3,7 @@ import { fetchProjects } from "../data/projectsData";
 import ProjectsCards from "../components/projectsPage/ProjectsCards";
 import ProjectsHero from "../components/projectsPage/ProjectsHero";
 import LoadingSpinner from "../components/common/LoadingSpinner";
+import EmptyProjectsState from "../components/common/EmptyProjectsState";
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
@@ -24,7 +25,13 @@ export default function ProjectsPage() {
     <div className="bg-brand-light text-brand-dark py-12 md:py-16 px-0 md:px-20">
       <ProjectsHero />
 
-      {loading ? <LoadingSpinner /> : <ProjectsCards items={projects} />}
+      {loading ? (
+        <LoadingSpinner />
+      ) : projects.length === 0 ? (
+        <EmptyProjectsState />
+      ) : (
+        <ProjectsCards items={projects} />
+      )}
     </div>
   );
 }

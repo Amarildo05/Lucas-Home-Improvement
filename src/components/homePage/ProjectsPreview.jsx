@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ProjectsCards from "../../components/projectsPage/ProjectsCards";
 import { fetchProjects } from "../../data/projectsData";
 import LoadingSpinner from "../common/LoadingSpinner";
+import EmptyProjectsState from "../common/EmptyProjectsState";
 
 export default function ProjectsPreview() {
   const navigate = useNavigate();
@@ -32,7 +33,13 @@ export default function ProjectsPreview() {
         Our Projects
       </h2>
 
-      {loading ? <LoadingSpinner /> : <ProjectsCards items={projects} />}
+      {loading ? (
+        <LoadingSpinner />
+      ) : projects.length === 0 ? (
+        <EmptyProjectsState />
+      ) : (
+        <ProjectsCards items={projects} />
+      )}
 
       <div className="flex justify-center mt-10">
         <Button
