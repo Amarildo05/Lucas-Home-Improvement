@@ -22,7 +22,7 @@ export default function DashboardHome() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center p-16">
+    <div className="w-full flex flex-col items-center p-6 sm:p-10 lg:p-16">
       <div className="w-full max-w-4xl space-y-10 text-center">
         {/* Welcome Section */}
         <div>
