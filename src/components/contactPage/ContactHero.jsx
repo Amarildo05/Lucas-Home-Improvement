@@ -4,9 +4,11 @@ export default function ContactHero() {
       <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
         Connect With Us
       </h2>
-      <p className="text-base md:text-lg text-brand-dark/80 max-w-xl mx-auto">
-        Have questions or need a quote? Reach out to us - we’re here to help
+
+      <p className="text-base md:text-lg text-brand-dark/80 max-w-xl mx-auto leading-relaxed">
+        Have questions or need a quote? Reach out to us — we’re here to help
         with your next project.
+        <i className="pi pi-phone text-brand-green text-lg ms-2" />
       </p>
     </div>
   );

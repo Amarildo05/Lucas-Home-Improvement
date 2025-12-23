@@ -3,16 +3,20 @@ import { Button } from "primereact/button";
 import { useNavigate } from "react-router-dom";
 import ProjectsCards from "../../components/projectsPage/ProjectsCards";
 import { fetchProjects } from "../../data/projectsData";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 export default function ProjectsPreview() {
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch only the latest 3 projects, for the homepage preview section.
     const loadProjects = async () => {
+      setLoading(true);
       const data = await fetchProjects({ limit: 3 });
       setProjects(data);
+      setLoading(false);
     };
 
     loadProjects();
@@ -24,11 +28,11 @@ export default function ProjectsPreview() {
       className="py-10 md:py-16 px-0 md:px-20 bg-[#F0F0F0] text-brand-dark"
     >
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 flex justify-center items-center gap-3">
-        <i className="pi pi-images text-brand-green text-2xl md:text-3xl md:mt-1"></i>
+        <i className="pi pi-images text-brand-green text-2xl md:text-3xl md:mt-1" />
         Our Projects
       </h2>
 
-      <ProjectsCards items={projects} />
+      {loading ? <LoadingSpinner /> : <ProjectsCards items={projects} />}
 
       <div className="flex justify-center mt-10">
         <Button
