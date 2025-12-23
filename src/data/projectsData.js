@@ -31,15 +31,20 @@ export async function fetchProjects({ limit = null } = {}) {
 
   // Normalize project shape so cards stay simple. If database structure changes, we fix it here only.
   return data.map((project) => {
-    const coverPhoto = project.project_photos?.find(
-      (photo) => photo.position === 0
+    const sortedPhotos = [...(project.project_photos || [])].sort(
+      (a, b) => a.position - b.position
     );
 
     return {
       id: project.id,
       title: project.title,
       description: project.description,
-      cover_image: coverPhoto?.image_url || null,
+
+      // Card cover image
+      cover_image: sortedPhotos[0]?.image_url || null,
+
+      // Modal carousel images
+      photos: sortedPhotos,
     };
   });
 }
