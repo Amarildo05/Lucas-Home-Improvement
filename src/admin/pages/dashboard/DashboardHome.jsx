@@ -26,16 +26,16 @@ export default function DashboardHome() {
       <div className="w-full max-w-4xl space-y-10 text-center">
         {/* Welcome Section */}
         <div>
-          <h1 className="text-3xl font-extrabold text-brand-dark">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-brand-dark">
             Welcome Back, Elidon
             <i
-              className="pi pi-user text-brand-green text-3xl ps-3 font-bold"
+              className="pi pi-user text-brand-green text-2xl md:text-3xl ps-3 font-bold"
               style={{
                 textShadow: "0 0 2px currentColor",
               }}
             ></i>
           </h1>
-          <p className="text-brand-dark/70 mt-1 text-lg">
+          <p className="text-brand-dark/70 mt-1 text-base md:text-lg">
             Here's what's happening today.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function DashboardHome() {
             </p>
           </div>
 
-          {/* Will add more stats later ... */}
+          {/* Maybe add more stats in the future ... */}
         </div>
 
         {/* Shortcut Buttons */}

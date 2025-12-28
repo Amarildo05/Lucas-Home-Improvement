@@ -69,9 +69,19 @@ export default function Sidebar({ isOpen, setIsOpen }) {
               {item.label}
             </NavLink>
           ))}
+
+          {/* Mobile Logout (below links) */}
+          <button
+            onClick={handleLogout}
+            className="lg:hidden mt-4 w-full text-left flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 text-red-300"
+          >
+            <i className="pi pi-sign-out text-lg"></i>
+            Logout
+          </button>
         </nav>
 
-        <div className="p-4 border-t border-white/10">
+        {/* Desktop Logout (bottom) */}
+        <div className="hidden lg:block p-2 md:p-4 border-t border-white/10">
           <button
             onClick={handleLogout}
             className="w-full text-left flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 text-red-300"
