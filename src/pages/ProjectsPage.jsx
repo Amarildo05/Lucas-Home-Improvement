@@ -22,7 +22,7 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <div className="bg-brand-light text-brand-dark py-12 md:py-16 px-0 md:px-20">
+    <div className="bg-brand-light text-brand-dark py-12 md:py-16 px-0 md:px-20 h-screen">
       <ProjectsHero />
 
       {loading ? (

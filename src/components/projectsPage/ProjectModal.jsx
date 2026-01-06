@@ -9,7 +9,7 @@ export default function ProjectModal({ visible, onHide, project }) {
   // Modal header
   const headerTemplate = (
     <div className="flex items-center justify-center mt-2">
-      <span className="font-bold text-lg md:text-xl text-brand-dark">
+      <span className="font-bold text-lg md:text-2xl text-brand-dark">
         {title}
       </span>
     </div>
@@ -20,7 +20,14 @@ export default function ProjectModal({ visible, onHide, project }) {
     <img
       src={photo.image_url}
       alt={title}
-      className="w-full h-64 md:h-80 object-cover rounded-xl shadow-md"
+      className="
+        w-full 
+        h-[60vh] md:h-[70vh]
+        object-contain
+        rounded-xl
+        -mt-6
+        -mb-2
+      "
     />
   );
 
@@ -29,14 +36,24 @@ export default function ProjectModal({ visible, onHide, project }) {
       header={headerTemplate}
       visible={visible}
       onHide={onHide}
-      className="w-full mx-5 sm:w-[700px]"
       modal
       draggable={false}
       dismissableMask
-      contentClassName="py-5 md:!p-6 !rounded-b-2xl"
+      className="
+        w-full 
+        mx-2 
+        sm:mx-5 
+        sm:w-[800px] 
+        lg:w-[1000px]
+      "
+      contentClassName="
+        py-4 
+        md:!p-6 
+        !rounded-b-2xl
+      "
       headerClassName="!rounded-t-2xl"
     >
-      <div className="space-y-4 md:space-y-6 text-brand-dark">
+      <div className="space-y-0 md:space-y-6 text-brand-dark">
         {/* Images carousel */}
         {Array.isArray(photos) && photos.length > 0 && (
           <Carousel
@@ -47,12 +64,12 @@ export default function ProjectModal({ visible, onHide, project }) {
             showIndicators
             showNavigators
             circular
-            className="sm:max-w-[95%] mx-auto"
+            className="w-full"
           />
         )}
 
         {/* Description */}
-        <p className="text-base text-gray-700 leading-relaxed text-center">
+        <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center px-4 md:px-12">
           {description}
         </p>
       </div>
